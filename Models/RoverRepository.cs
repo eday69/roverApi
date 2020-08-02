@@ -9,7 +9,7 @@ namespace rover.Models
     public class RoverRepository : IRoverRepository
     {
         private static List<RoverMachine> _rovers = new List<RoverMachine>();
-
+        private static Grid _grid = new Grid();
 
         public RoverRepository()
         {
@@ -21,8 +21,20 @@ namespace rover.Models
             return _rovers;
         }
 
+        public Grid GetGrid()
+        {
+            return _grid;
+        }
+
+        public Grid SetGrid(Grid grid)
+        {
+            _grid = grid;
+            return _grid;
+        }
+
         public int Add(RoverMachine rover)
         {
+            rover.Id = _rovers.Count;
             _rovers.Add(rover);
 
             return _rovers.Count - 1;

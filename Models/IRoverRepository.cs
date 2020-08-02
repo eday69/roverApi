@@ -6,6 +6,8 @@ namespace rover.Models
     {
         int Add(RoverMachine rover);
         IEnumerable<RoverMachine> GetAll();
+        Grid GetGrid();
+        Grid SetGrid(Grid grid);
         RoverMachine Find(int roverId);
         RoverMachine Remove(int roverId);
         RoverMachine Move(int roverId, string movements);
