@@ -3,10 +3,9 @@ namespace rover.Models
 {
     public class RoverMachine
     {
+        public int Id { get; set; }
         public int XPos { get; set; }
-
         public int YPos { get; set; }
-
         public char Heading { get; set; }
 
     }
@@ -18,7 +17,6 @@ namespace rover.Models
 
     public class Grid
     {
-        public int MaxX { get; set; }
-        public int MaxY { get; set; }
+        public int MaxSize { get; set; }
     }
 }

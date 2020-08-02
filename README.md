@@ -1,5 +1,5 @@
 ﻿
-*Rover API 
+*Rover API* 
 
 Launch & Land remote driven rovers on Europa, a moon off Jupiter that has a potential to be colonized.
 
@@ -46,8 +46,10 @@ POST /api/rovers        - Launch & land a rover on Europa
 PATCH /api/rovers/:id/move  - Send a series of movement instructions for rover :id to execute
 
 { "move": "LRM" }
-                        
- These instructions are available:
+
+Move instructions may be from one to n number of predefined movements.
+  
+These instructions are available:
 
     - "L": rotate rover 90 degrees counter-clockwise, on same grid position
     - "R": rotate rover 90 degrees clockwise, on same grid position
