@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using rover.Models;
 using System.Text.Json;
+using System.Web.Http.Cors;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace rover.Controllers
 {
 
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class RoversController : ControllerBase
     {
 
@@ -20,7 +20,7 @@ namespace rover.Controllers
         {
             Rovers = rovers;
         }
-        
+
         public IRoverRepository Rovers { get; set; }
 
 

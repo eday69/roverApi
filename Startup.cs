@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,16 @@ namespace rover
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "MyPolicy",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("https://localhost:5003",
+                                              "http://localhost:5002")
+                                        .WithMethods("PUT", "DELETE", "GET", "POST");
+                                  });
+            });
 
             services.AddSingleton<IRoverRepository, RoverRepository>();
         }
@@ -42,6 +53,8 @@ namespace rover
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
