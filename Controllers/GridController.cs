@@ -33,7 +33,7 @@ namespace grid.Controllers
         }
 
         // PUT api/grid
-        [HttpPut]
+        [HttpOptions, HttpPut]
         public IActionResult PutGrid([FromBody] Grid grid)
         {
             if (grid == null)

@@ -59,7 +59,6 @@ namespace rover.Models
             rover = Find(roverId);
             foreach(char command in movements)
             {
-                Console.WriteLine($"Bef {command} {rover.XPos}, {rover.YPos}: {rover.Heading} ");
                 switch (command)
                 {
                     case 'L':
@@ -77,7 +76,6 @@ namespace rover.Models
                     default:
                         break;
                 }
-                Console.WriteLine($"Aft {rover.XPos}, {rover.YPos}: {rover.Heading} ");
             }
             return rover;
         }

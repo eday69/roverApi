@@ -5,14 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using rover.Models;
 using System.Text.Json;
-using System.Web.Http.Cors;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 namespace rover.Controllers
 {
 
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class RoversController : ControllerBase
     {
 
@@ -54,12 +53,10 @@ namespace rover.Controllers
         }
 
         // PATCH api/rovers/{id}
-        [HttpPatch("{id}/move")]
+        [HttpOptions, HttpPatch("{id}/move")]
         public IActionResult Update(int id, [FromBody] RoverMovements movement)
         {
-            //string json = System.Text.Json.JsonSerializer.Serialize(move).ToString(); ;
             Rovers.Move(id, movement.move);
-
             return new NoContentResult();
         }
 
