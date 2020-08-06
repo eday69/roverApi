@@ -9,7 +9,6 @@ namespace rover.Models
         Grid GetGrid();
         Grid SetGrid(Grid grid);
         RoverMachine Find(int roverId);
-        RoverMachine Remove(int roverId);
         RoverMachine Move(int roverId, string movements);
     }
 }

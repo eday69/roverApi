@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using rover.Models;
 using System.Text.Json;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 namespace rover.Controllers
 {
 
@@ -58,13 +57,6 @@ namespace rover.Controllers
         {
             Rovers.Move(id, movement.move);
             return new NoContentResult();
-        }
-
-        // DELETE api/rovers/{id}
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            Rovers.Remove(id);
         }
     }
 }

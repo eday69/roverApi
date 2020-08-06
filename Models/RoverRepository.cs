@@ -45,14 +45,6 @@ namespace rover.Models
             return _rovers.ElementAtOrDefault(roverId);
         }
 
-        public RoverMachine Remove(int roverId)
-        {
-            RoverMachine rover;
-            rover = Find(roverId);
-            _rovers.RemoveAt(roverId);
-            return rover;
-        }
-
         public RoverMachine Move(int roverId, string movements)
         {
             RoverMachine rover;
